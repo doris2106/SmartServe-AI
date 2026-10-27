@@ -1,0 +1,103 @@
+<mxfile host="app.diagrams.net" modified="2026-10-27T15:15:00.000Z" agent="SmartServeAI" version="21.0.0">
+  <diagram id="smartserve-arch" name="SmartServe AI Cloud Architecture">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- User / Clients -->
+        <mxCell id="client" value="Students &amp;amp; Administrators&#xa;(Web Browser / Mobile)" style="shape=actor;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="260" width="100" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- AWS Cloud Boundary -->
+        <mxCell id="aws_cloud" value="AWS Cloud (Region: eu-north-1)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#f59e0b;strokeWidth=2;fontStyle=1;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="220" y="60" width="880" height="660" as="geometry" />
+        </mxCell>
+
+        <!-- AWS Budget -->
+        <mxCell id="budget" value="AWS Budget &amp;amp; Cost Alert&#xa;($5.00 Limit &amp;gt; 80% Email)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;fontStyle=1" vertex="1" parent="aws_cloud">
+          <mxGeometry x="660" y="40" width="180" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Custom VPC -->
+        <mxCell id="vpc" value="Custom VPC: SmartServe-VPC (10.0.0.0/16)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=2;fontStyle=1;startSize=28;" vertex="1" parent="aws_cloud">
+          <mxGeometry x="40" y="100" width="580" height="520" as="geometry" />
+        </mxCell>
+
+        <!-- Internet Gateway -->
+        <mxCell id="igw" value="Internet Gateway&#xa;(SmartServe-IGW)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#15803d;fontStyle=1" vertex="1" parent="vpc">
+          <mxGeometry x="20" y="40" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Public Subnet -->
+        <mxCell id="pub_subnet" value="Public Subnet: SmartServe-Pub-1a (10.0.1.0/24 - AZ eu-north-1a)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0284c7;strokeWidth=1;fontStyle=1;startSize=24;" vertex="1" parent="vpc">
+          <mxGeometry x="20" y="120" width="540" height="190" as="geometry" />
+        </mxCell>
+
+        <!-- EC2 Instance -->
+        <mxCell id="ec2" value="Amazon EC2 Instance: SmartServe-Server (t3.micro)&#xa;IP: 51.21.150.255 | Security Group: smartserve-ec2-sg (Port 80/22)&#xa;---------------------------------------------------------&#xa;• Production React Frontend (Vite)&#xa;• Express.js REST API Server&#xa;• AI Classifier Engine &amp;amp; Text Similarity Model&#xa;• CloudWatch Agent &amp;amp; SQS Event Dispatcher" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontStyle=0;align=left;spacingLeft=10;" vertex="1" parent="pub_subnet">
+          <mxGeometry x="20" y="35" width="500" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- Private Subnets (RDS) -->
+        <mxCell id="pvt_subnet" value="Private Subnets: SmartServe-Pvt-1a &amp;amp; 1b (10.0.10.0/24 &amp;amp; 10.0.11.0/24)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c3aed;strokeWidth=1;fontStyle=1;startSize=24;" vertex="1" parent="vpc">
+          <mxGeometry x="20" y="330" width="540" height="170" as="geometry" />
+        </mxCell>
+
+        <!-- RDS Instance -->
+        <mxCell id="rds" value="Amazon RDS for MySQL 8.0: smartserve-db (db.t3.micro, 20GB gp3)&#xa;Security Group: smartserve-rds-sg (Inbound 3306 STRICTLY FROM EC2 SG)&#xa;---------------------------------------------------------&#xa;• Non-Publicly Accessible (Isolated Private Subnet Group)&#xa;• Tables: users, complaints, departments, categories, audit_log" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;align=left;spacingLeft=10;" vertex="1" parent="pvt_subnet">
+          <mxGeometry x="20" y="40" width="500" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Managed Services Column -->
+        <mxCell id="s3" value="Amazon S3 (Private Bucket)&#xa;smartserve-attachments-548931595895&#xa;• Complaint photographs &amp;amp; PDFs&#xa;• Block Public Access Enabled&#xa;• Secured via Time-Limited Presigned URLs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;align=left;spacingLeft=10;" vertex="1" parent="aws_cloud">
+          <mxGeometry x="640" y="110" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ssm" value="AWS Systems Manager (SSM)&#xa;Parameter Store: /smartserve/*&#xa;• /db/host, /db/user, /db/password&#xa;• /jwt/secret (SecureString)&#xa;• /s3/bucket, /sqs/queue_url" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#b45309;align=left;spacingLeft=10;" vertex="1" parent="aws_cloud">
+          <mxGeometry x="640" y="215" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sqs" value="Amazon SQS (Queue)&#xa;smartserve-complaint-queue&#xa;• Asynchronous ticket processing&#xa;• Audit logging &amp;amp; background jobs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce7f3;strokeColor=#db2777;align=left;spacingLeft=10;" vertex="1" parent="aws_cloud">
+          <mxGeometry x="640" y="320" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sns" value="Amazon SNS (Topic)&#xa;smartserve-notifications-topic&#xa;• Critical complaint immediate alerts&#xa;• Resolution notifications" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffedd5;strokeColor=#ea580c;align=left;spacingLeft=10;" vertex="1" parent="aws_cloud">
+          <mxGeometry x="640" y="415" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cw" value="Amazon CloudWatch&#xa;• Log Group: /smartserve/app&#xa;• Metric Alarm: EC2 CPU &amp;gt; 80%&#xa;• Custom Metrics: New/Resolved Tickets" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;align=left;spacingLeft=10;" vertex="1" parent="aws_cloud">
+          <mxGeometry x="640" y="510" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Connections / Arrows -->
+        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#0284c7;" edge="1" source="client" target="igw" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#0284c7;" edge="1" source="igw" target="ec2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" value="SQL Query (Port 3306 - EC2 SG only)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#6d28d9;fontStyle=1" edge="1" source="ec2" target="rds" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" value="IAM Instance Profile / Presigned URLs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;strokeColor=#dc2626;" edge="1" source="ec2" target="s3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" value="Fetch Credentials on Startup" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;strokeColor=#b45309;" edge="1" source="ec2" target="ssm" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" value="Enqueue Complaint Events" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;strokeColor=#db2777;" edge="1" source="ec2" target="sqs" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" value="Publish Critical / Resolution Alerts" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;strokeColor=#ea580c;" edge="1" source="ec2" target="sns" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" value="Ship Logs &amp;amp; Metrics" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;strokeColor=#0284c7;" edge="1" source="ec2" target="cw" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
+

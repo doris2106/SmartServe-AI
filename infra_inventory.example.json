@@ -1,0 +1,22 @@
+{
+  "VpcId": "vpc-0a16761b4d6d1b1ee",
+  "PublicSubnet1a": "subnet-0719ebc501a0fc656",
+  "PublicSubnet1b": "subnet-0109fa09818aa2e90",
+  "PrivateSubnet1a": "subnet-0b3e0a5258e6e64f6",
+  "PrivateSubnet1b": "subnet-0c1237e4572c56547",
+  "Ec2SecurityGroupId": "sg-0c60202496ace57da",
+  "RdsSecurityGroupId": "sg-07d1ceaa932521ee7",
+  "S3Bucket": "smartserve-attachments-YOUR_ACCOUNT_ID",
+  "RoleName": "SmartServe-EC2-Role",
+  "InstanceProfile": "SmartServe-EC2-InstanceProfile",
+  "QueueUrl": "https://sqs.eu-north-1.amazonaws.com/YOUR_ACCOUNT_ID/smartserve-complaint-queue",
+  "TopicArn": "arn:aws:sns:eu-north-1:YOUR_ACCOUNT_ID/smartserve-notifications-topic",
+  "DbSubnetGroup": "smartserve-db-subnet-group",
+  "DbIdentifier": "smartserve-db",
+  "InstanceId": "i-0e5b000964bc4ddc9",
+  "PublicIp": "YOUR_EC2_PUBLIC_IP",
+  "PublicDns": "ec2-xx-xx-xx-xx.eu-north-1.compute.amazonaws.com",
+  "AppUrl": "http://YOUR_EC2_PUBLIC_IP",
+  "CloudWatchAlarm": "SmartServe-EC2-HighCPU-Alarm",
+  "BudgetName": "SmartServe-Monthly-Budget"
+}
