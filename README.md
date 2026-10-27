@@ -114,6 +114,9 @@ SmartServe AI genuinely integrates **8 AWS services**, fulfilling mandatory comp
 
 ## 6. Architecture Diagram
 
+![SmartServe AI Cloud Architecture](docs/architecture.svg)
+
+### Cloud Infrastructure Flowchart
 ```mermaid
 flowchart TD
     subgraph Users["Campus Clients"]

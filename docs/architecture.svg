@@ -1,0 +1,262 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" width="100%" height="100%" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Shadow Filters -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#059669" />
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#d97706" />
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#7c3aed" />
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748b" />
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <rect x="0" y="0" width="1200" height="70" fill="#0f172a" />
+  <text x="30" y="44" fill="#ffffff" font-size="22" font-weight="700" letter-spacing="0.5">SmartServe AI: Cloud Computing System Architecture</text>
+  <text x="890" y="43" fill="#38bdf8" font-size="14" font-weight="600">AWS Region: eu-north-1 (Stockholm)</text>
+
+  <!-- ==================== CLIENT LAYER ==================== -->
+  <g transform="translate(30, 100)">
+    <!-- Users Box -->
+    <rect x="0" y="0" width="180" height="690" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="180" height="42" rx="10" fill="#e2e8f0"/>
+    <text x="90" y="27" fill="#1e293b" font-size="14" font-weight="700" text-anchor="middle">CLIENT LAYER</text>
+
+    <!-- Student Device -->
+    <g transform="translate(15, 60)">
+      <rect x="0" y="0" width="150" height="150" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5" filter="url(#card-shadow)"/>
+      <circle cx="75" cy="40" r="22" fill="#dbeafe"/>
+      <path d="M 67 48 C 67 40 83 40 83 48 Z" fill="#2563eb"/>
+      <circle cx="75" cy="34" r="8" fill="#2563eb"/>
+      <text x="75" y="85" fill="#0f172a" font-size="13" font-weight="700" text-anchor="middle">Students</text>
+      <text x="75" y="103" fill="#64748b" font-size="11" text-anchor="middle">Submit Complaints</text>
+      <text x="75" y="119" fill="#64748b" font-size="11" text-anchor="middle">Upload S3 Photos</text>
+      <text x="75" y="135" fill="#64748b" font-size="11" text-anchor="middle">Track Resolution</text>
+    </g>
+
+    <!-- Admin Device -->
+    <g transform="translate(15, 235)">
+      <rect x="0" y="0" width="150" height="150" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#card-shadow)"/>
+      <circle cx="75" cy="40" r="22" fill="#f1f5f9"/>
+      <path d="M 67 48 C 67 40 83 40 83 48 Z" fill="#475569"/>
+      <circle cx="75" cy="34" r="8" fill="#475569"/>
+      <text x="75" y="85" fill="#0f172a" font-size="13" font-weight="700" text-anchor="middle">Administrators</text>
+      <text x="75" y="103" fill="#64748b" font-size="11" text-anchor="middle">Facilities Command</text>
+      <text x="75" y="119" fill="#64748b" font-size="11" text-anchor="middle">Assign Staff &amp; Priority</text>
+      <text x="75" y="135" fill="#64748b" font-size="11" text-anchor="middle">Campus Analytics</text>
+    </g>
+
+    <!-- Staff Device -->
+    <g transform="translate(15, 410)">
+      <rect x="0" y="0" width="150" height="150" rx="8" fill="#ffffff" stroke="#fed7aa" stroke-width="1.5" filter="url(#card-shadow)"/>
+      <circle cx="75" cy="40" r="22" fill="#ffedd5"/>
+      <path d="M 67 48 C 67 40 83 40 83 48 Z" fill="#ea580c"/>
+      <circle cx="75" cy="34" r="8" fill="#ea580c"/>
+      <text x="75" y="85" fill="#0f172a" font-size="13" font-weight="700" text-anchor="middle">Maintenance Staff</text>
+      <text x="75" y="103" fill="#64748b" font-size="11" text-anchor="middle">Electricians, Plumbers</text>
+      <text x="75" y="119" fill="#64748b" font-size="11" text-anchor="middle">Assigned Work Orders</text>
+      <text x="75" y="135" fill="#64748b" font-size="11" text-anchor="middle">Status &amp; Work Logs</text>
+    </g>
+  </g>
+
+  <!-- ==================== AWS CLOUD BOUNDARY ==================== -->
+  <g transform="translate(240, 100)">
+    <rect x="0" y="0" width="930" height="690" rx="12" fill="#f0f9ff" stroke="#0284c7" stroke-width="2" stroke-dasharray="6,4" filter="url(#shadow)"/>
+    
+    <!-- AWS Cloud Header -->
+    <rect x="0" y="0" width="930" height="42" rx="12" fill="#0284c7"/>
+    <text x="20" y="27" fill="#ffffff" font-size="15" font-weight="700">Amazon Web Services (AWS Cloud Environment)</text>
+    <text x="740" y="27" fill="#bae6fd" font-size="13" font-weight="600">Account: 548931595895</text>
+
+    <!-- ==================== CUSTOM VPC ==================== -->
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="600" height="610" rx="10" fill="#f8fafc" stroke="#10b981" stroke-width="2" filter="url(#card-shadow)"/>
+      <rect x="0" y="0" width="600" height="34" rx="10" fill="#10b981"/>
+      <text x="16" y="23" fill="#ffffff" font-size="13" font-weight="700">Custom Amazon VPC: SmartServe-VPC (CIDR: 10.0.0.0/16)</text>
+
+      <!-- Internet Gateway -->
+      <g transform="translate(20, 48)">
+        <rect x="0" y="0" width="560" height="40" rx="6" fill="#d1fae5" stroke="#059669" stroke-width="1.2"/>
+        <text x="280" y="25" fill="#065f46" font-size="12" font-weight="700" text-anchor="middle">Internet Gateway (SmartServe-IGW) &amp; Public Route Table (0.0.0.0/0 &rarr; IGW)</text>
+      </g>
+
+      <!-- ==================== PUBLIC SUBNET (EC2) ==================== -->
+      <g transform="translate(20, 102)">
+        <rect x="0" y="0" width="560" height="270" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5"/>
+        <rect x="0" y="0" width="560" height="26" rx="8" fill="#3b82f6"/>
+        <text x="12" y="18" fill="#ffffff" font-size="12" font-weight="700">Public Subnet: SmartServe-Pub-1a (10.0.1.0/24 | AZ: eu-north-1a)</text>
+
+        <!-- EC2 Card -->
+        <g transform="translate(15, 38)">
+          <rect x="0" y="0" width="530" height="218" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
+          
+          <!-- EC2 Header -->
+          <rect x="0" y="0" width="530" height="32" rx="8" fill="#22c55e"/>
+          <text x="15" y="21" fill="#ffffff" font-size="13" font-weight="700">Amazon EC2 Instance: SmartServe-Server (t3.micro | Amazon Linux 2023)</text>
+          <text x="440" y="21" fill="#ecfdf5" font-size="11" font-weight="600">IP: 51.21.150.255</text>
+
+          <!-- Inside EC2 components -->
+          <!-- Web Frontend -->
+          <rect x="15" y="44" width="240" height="72" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+          <text x="25" y="64" fill="#1e293b" font-size="12" font-weight="700">React 18 Production Frontend</text>
+          <text x="25" y="80" fill="#64748b" font-size="10.5">• Vite 6 Optimized SPA</text>
+          <text x="25" y="95" fill="#64748b" font-size="10.5">• Chart.js Analytics &amp; Responsive UI</text>
+          <text x="25" y="108" fill="#64748b" font-size="10.5">• Student &amp; Staff Dashboard Views</text>
+
+          <!-- Express API -->
+          <rect x="275" y="44" width="240" height="72" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+          <text x="285" y="64" fill="#1e293b" font-size="12" font-weight="700">Node.js Express REST API</text>
+          <text x="285" y="80" fill="#64748b" font-size="10.5">• JWT Authentication &amp; RBAC Guards</text>
+          <text x="285" y="95" fill="#64748b" font-size="10.5">• Multer S3 Memory Buffer Filter</text>
+          <text x="285" y="108" fill="#64748b" font-size="10.5">• Managed by systemd (Port 80/5000)</text>
+
+          <!-- AI NLP Engine -->
+          <rect x="15" y="128" width="240" height="76" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+          <text x="25" y="148" fill="#1e3a8a" font-size="12" font-weight="700">&#10024; Local AI / NLP Classifier Engine</text>
+          <text x="25" y="164" fill="#2563eb" font-size="10.5">• Category keyword classification</text>
+          <text x="25" y="179" fill="#2563eb" font-size="10.5">• Hazard urgency scoring (1.0 - 10.0)</text>
+          <text x="25" y="194" fill="#2563eb" font-size="10.5">• Sørensen-Dice duplicate detection</text>
+
+          <!-- Security Group info -->
+          <rect x="275" y="128" width="240" height="76" rx="6" fill="#fefce8" stroke="#ca8a04" stroke-width="1"/>
+          <text x="285" y="148" fill="#854d0e" font-size="12" font-weight="700">&#128274; Security Group &amp; IAM Role</text>
+          <text x="285" y="164" fill="#713f12" font-size="10.5">• SG: smartserve-ec2-sg (In: 80, 22)</text>
+          <text x="285" y="179" fill="#713f12" font-size="10.5">• Role: SmartServe-EC2-Role</text>
+          <text x="285" y="194" fill="#713f12" font-size="10.5">• Zero hard-coded credentials</text>
+        </g>
+      </g>
+
+      <!-- ==================== PRIVATE SUBNETS (RDS) ==================== -->
+      <g transform="translate(20, 390)">
+        <rect x="0" y="0" width="560" height="200" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+        <rect x="0" y="0" width="560" height="26" rx="8" fill="#7c3aed"/>
+        <text x="12" y="18" fill="#ffffff" font-size="12" font-weight="700">Private Subnets: SmartServe-Pvt-1a &amp; 1b (10.0.10.0/24 &amp; 10.0.11.0/24 | No Internet Routing)</text>
+
+        <!-- RDS Card -->
+        <g transform="translate(15, 38)">
+          <rect x="0" y="0" width="530" height="148" rx="8" fill="#faf5ff" stroke="#9333ea" stroke-width="1.5"/>
+          <rect x="0" y="0" width="530" height="30" rx="8" fill="#9333ea"/>
+          <text x="15" y="20" fill="#ffffff" font-size="13" font-weight="700">Amazon RDS for MySQL 8.0 (smartserve-db | db.t3.micro | 20 GB gp3)</text>
+
+          <text x="20" y="52" fill="#581c87" font-size="12" font-weight="700">Non-Publicly Accessible (Isolated Private Subnet Group: smartserve-db-subnet-group)</text>
+          <text x="20" y="72" fill="#4b5563" font-size="11.5">• Security Group: <tspan font-weight="700" fill="#1e293b">smartserve-rds-sg</tspan> (Inbound Port 3306 strictly restricted to EC2 SG)</text>
+          <text x="20" y="90" fill="#4b5563" font-size="11.5">• Automated Backups &amp; Multi-AZ Subnet Failover Support</text>
+          <text x="20" y="108" fill="#4b5563" font-size="11.5">• Tables: <tspan font-family="monospace">users, complaints, departments, categories, complaint_updates, notifications</tspan></text>
+          <text x="20" y="126" fill="#4b5563" font-size="11.5">• Host: <tspan font-family="monospace" font-size="10.5">smartserve-db.czw28mwcig8m.eu-north-1.rds.amazonaws.com</tspan></text>
+        </g>
+      </g>
+    </g>
+
+    <!-- ==================== AWS MANAGED SERVICES COLUMN ==================== -->
+    <g transform="translate(640, 60)">
+      <!-- S3 Card -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="270" height="96" rx="8" fill="#ffffff" stroke="#ef4444" stroke-width="1.5" filter="url(#card-shadow)"/>
+        <rect x="0" y="0" width="270" height="26" rx="8" fill="#ef4444"/>
+        <text x="12" y="18" fill="#ffffff" font-size="12" font-weight="700">Amazon S3 (Attachments Bucket)</text>
+        <text x="12" y="44" fill="#0f172a" font-size="11" font-weight="700">smartserve-attachments-548931595895</text>
+        <text x="12" y="60" fill="#64748b" font-size="10.5">• Complaint photos &amp; damage proof</text>
+        <text x="12" y="74" fill="#64748b" font-size="10.5">• Block Public Access Enabled</text>
+        <text x="12" y="88" fill="#64748b" font-size="10.5">• 15-min temporary SigV4 Presigned URLs</text>
+      </g>
+
+      <!-- SSM Parameter Store Card -->
+      <g transform="translate(0, 108)">
+        <rect x="0" y="0" width="270" height="96" rx="8" fill="#ffffff" stroke="#f59e0b" stroke-width="1.5" filter="url(#card-shadow)"/>
+        <rect x="0" y="0" width="270" height="26" rx="8" fill="#f59e0b"/>
+        <text x="12" y="18" fill="#ffffff" font-size="12" font-weight="700">AWS SSM Parameter Store</text>
+        <text x="12" y="44" fill="#0f172a" font-size="11" font-weight="700">Namespace: /smartserve/*</text>
+        <text x="12" y="60" fill="#64748b" font-size="10.5">• /db/host, /db/user, /db/port, /db/name</text>
+        <text x="12" y="74" fill="#64748b" font-size="10.5">• /db/password &amp; /jwt/secret (SecureString)</text>
+        <text x="12" y="88" fill="#64748b" font-size="10.5">• Decrypted at boot via IAM instance role</text>
+      </g>
+
+      <!-- SQS Card -->
+      <g transform="translate(0, 216)">
+        <rect x="0" y="0" width="270" height="88" rx="8" fill="#ffffff" stroke="#ec4899" stroke-width="1.5" filter="url(#card-shadow)"/>
+        <rect x="0" y="0" width="270" height="26" rx="8" fill="#ec4899"/>
+        <text x="12" y="18" fill="#ffffff" font-size="12" font-weight="700">Amazon SQS (Event Buffer)</text>
+        <text x="12" y="44" fill="#0f172a" font-size="11" font-weight="700">smartserve-complaint-queue</text>
+        <text x="12" y="60" fill="#64748b" font-size="10.5">• Buffers complaint intake events</text>
+        <text x="12" y="74" fill="#64748b" font-size="10.5">• Decouples compute from bursts</text>
+      </g>
+
+      <!-- SNS Card -->
+      <g transform="translate(0, 316)">
+        <rect x="0" y="0" width="270" height="88" rx="8" fill="#ffffff" stroke="#8b5cf6" stroke-width="1.5" filter="url(#card-shadow)"/>
+        <rect x="0" y="0" width="270" height="26" rx="8" fill="#8b5cf6"/>
+        <text x="12" y="18" fill="#ffffff" font-size="12" font-weight="700">Amazon SNS (Alert Broadcast)</text>
+        <text x="12" y="44" fill="#0f172a" font-size="11" font-weight="700">smartserve-notifications-topic</text>
+        <text x="12" y="60" fill="#64748b" font-size="10.5">• Critical electrical safety alerts</text>
+        <text x="12" y="74" fill="#64748b" font-size="10.5">• Ticket resolution notices to students</text>
+      </g>
+
+      <!-- CloudWatch Card -->
+      <g transform="translate(0, 416)">
+        <rect x="0" y="0" width="270" height="96" rx="8" fill="#ffffff" stroke="#06b6d4" stroke-width="1.5" filter="url(#card-shadow)"/>
+        <rect x="0" y="0" width="270" height="26" rx="8" fill="#06b6d4"/>
+        <text x="12" y="18" fill="#ffffff" font-size="12" font-weight="700">Amazon CloudWatch (Observability)</text>
+        <text x="12" y="44" fill="#0f172a" font-size="11" font-weight="700">Logs: /smartserve/app</text>
+        <text x="12" y="60" fill="#64748b" font-size="10.5">• Centralized application event logging</text>
+        <text x="12" y="74" fill="#64748b" font-size="10.5">• Alarm: SmartServe-EC2-HighCPU-Alarm</text>
+        <text x="12" y="88" fill="#64748b" font-size="10.5">• Triggers alert when CPU &gt; 80%</text>
+      </g>
+
+      <!-- AWS Budgets Card -->
+      <g transform="translate(0, 524)">
+        <rect x="0" y="0" width="270" height="84" rx="8" fill="#ffffff" stroke="#10b981" stroke-width="1.5" filter="url(#card-shadow)"/>
+        <rect x="0" y="0" width="270" height="26" rx="8" fill="#10b981"/>
+        <text x="12" y="18" fill="#ffffff" font-size="12" font-weight="700">AWS Budgets (Cost Governance)</text>
+        <text x="12" y="44" fill="#0f172a" font-size="11" font-weight="700">SmartServe-Monthly-Budget</text>
+        <text x="12" y="60" fill="#64748b" font-size="10.5">• Monthly threshold limit: $5.00</text>
+        <text x="12" y="74" fill="#64748b" font-size="10.5">• Automated email alert at 80% forecast</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== FLOW CONNECTORS & LABELS ==================== -->
+  <!-- Client to IGW -->
+  <path d="M 210 320 L 255 320 L 255 228 L 278 228" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)" />
+  <rect x="195" y="270" width="80" height="20" rx="4" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="235" y="284" fill="#1e40af" font-size="10.5" font-weight="700" text-anchor="middle">HTTP: 80</text>
+
+  <!-- IGW to EC2 -->
+  <path d="M 540 248 L 540 262" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#arrow-green)" />
+
+  <!-- EC2 to RDS (Port 3306) -->
+  <path d="M 535 480 L 535 540" fill="none" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow-purple)" />
+  <rect x="470" y="500" width="130" height="22" rx="4" fill="#ffffff" stroke="#c084fc"/>
+  <text x="535" y="515" fill="#6b21a8" font-size="10.5" font-weight="700" text-anchor="middle">MySQL TCP: 3306</text>
+
+  <!-- EC2 to Managed Services (Rightward Arrows) -->
+  <!-- To S3 -->
+  <path d="M 800 300 L 840 300 L 840 208 L 878 208" fill="none" stroke="#ef4444" stroke-width="1.8" marker-end="url(#arrow)" />
+
+  <!-- To SSM -->
+  <path d="M 800 330 L 880 330" fill="none" stroke="#f59e0b" stroke-width="1.8" marker-end="url(#arrow-orange)" />
+
+  <!-- To SQS -->
+  <path d="M 800 360 L 840 360 L 840 420 L 878 420" fill="none" stroke="#ec4899" stroke-width="1.8" marker-end="url(#arrow)" />
+
+  <!-- To SNS -->
+  <path d="M 800 390 L 840 390 L 840 520 L 878 520" fill="none" stroke="#8b5cf6" stroke-width="1.8" marker-end="url(#arrow-purple)" />
+
+  <!-- To CloudWatch -->
+  <path d="M 800 420 L 840 420 L 840 624 L 878 624" fill="none" stroke="#06b6d4" stroke-width="1.8" marker-end="url(#arrow)" />
+</svg>
